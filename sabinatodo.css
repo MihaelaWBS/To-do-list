@@ -1,69 +1,78 @@
-/* Reset some default styles and set a background color */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    background-color: #f2f2f2;
+    background-color: #caabab;
 }
 
-/* Style the header */
 h1 {
     font-family: 'Luxurious Roman', serif;
     text-align: center;
-    color: #333;
+    color: black;
     margin-top: 20px;
 }
 
-/* Style the form for adding books */
 #toreadform {
     text-align: center;
     margin: 20px auto;
 }
 
 input[type="text"] {
-    width: 80%;
-    padding: 10px;
-    font-size: 16px;
+    width: 50%;
+    padding: 20px;
+    font-size: 18px;
+    margin: 10px 0;
+    border: 0.6rem solid #a39292;
+    border-style: inset;
+    outline: none;
 }
 
 button {
-    background-color: #333;
+    background-color: #2b2222;
     color: #fff;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
 }
 
-/* Style the book list */
 #toreadlist {
     list-style: none;
     padding: 0;
     margin: 20px auto;
-    max-width: 80%;
+    max-width: 70%;
 }
 
 li {
     background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 15px;
+    margin: 20px;
     display: flex;
+    align-items: center; /* Center vertically within the list item */
     justify-content: space-between;
 }
 
-button.delete-button {
-    background-color: #ff5050;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
+.book-title {
+    color: black; /* Set the text color to black */
 }
 
-button.update-button {
+li .book-title {
+    color: black; /* Set the text color to black */
+    font-weight: bold; /* Make the text bold */
+}
+
+li span {
+    display: flex;
+    align-items: center;
+}
+
+/* Style the buttons */
+.delete-button,
+.update-button {
     background-color: #33cc33;
     color: #fff;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
+    margin-left: 10px; /* Add margin to align the buttons to the right */
 }

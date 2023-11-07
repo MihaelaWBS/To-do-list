@@ -5,18 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&family=Montserrat:wght@200&display=swap" rel="stylesheet">"
-    <title>Sabina To do list</title>
+    <link href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&family=Montserrat:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="sabinatodo.css">
+    <title>Sabina To-Do List</title>
 </head>
 <body>
-    <h1>To read list</h1>
+    <h1>To Read List</h1>
     <form id="toreadform">
         <input type="text" id="book" placeholder="Add a new book" required>
         <button type="submit">Add book</button>
     </form>
     <ul id="toreadlist">
-
+        <li>
+            <span class="book-title">Book Title</span>
+            <span>
+                <button class="delete-button">Delete</button>
+                <button class="update-button">Update</button>
+            </span>
+        </li>
     </ul>
     <script src="sabinatodo.js"></script>
 </body>
