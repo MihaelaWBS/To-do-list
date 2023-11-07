@@ -14,13 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        const listItem = document.createElement("li");
-        listItem.innerHTML = `
-            ${bookName}
-            <button class="delete-button">Delete</button>
-            <button class="update-button">Update</button>
-        `;
-
+        const listItem = createBookListItem(bookName);
         toReadList.appendChild(listItem);
         bookInput.value = "";
 
@@ -30,22 +24,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
     toReadList.addEventListener("click", function (e) {
         if (e.target.classList.contains("delete-button")) {
-            e.target.parentElement.remove();
-            // Save the updated book list to localStorage
-            saveBooks();
+            deleteBookListItem(e.target.parentElement.parentElement);
         } else if (e.target.classList.contains("update-button")) {
-            const bookName = prompt("Update book name:", e.target.parentElement.textContent);
-            if (bookName !== null) {
-                e.target.parentElement.textContent = bookName;
-                // Save the updated book list to localStorage
-                saveBooks();
-            }
+            updateBookListItem(e.target.parentElement.parentElement);
         }
     });
 
+    function createBookListItem(bookName) {
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `
+            <span class="book-title">${bookName}</span>
+            <div class="button-container">
+                <button class="delete-button">Delete</button>
+                <button class="update-button">Update</button>
+            </div>
+        `;
+        return listItem;
+    }
+
+    function deleteBookListItem(listItem) {
+        listItem.classList.add("deleted"); // Add the "deleted" class to the list item
+        setTimeout(function () {
+            listItem.remove(); // Remove the list item after a delay (you can adjust the delay as needed)
+            // Save the updated book list to localStorage
+            saveBooks();
+        }, 1000); // 1000 milliseconds (1 second) delay
+    }
+
+    function updateBookListItem(listItem) {
+        const bookName = prompt("Update book name:", listItem.querySelector(".book-title").textContent);
+        if (bookName !== null) {
+            listItem.querySelector(".book-title").textContent = bookName;
+            // Save the updated book list to localStorage
+            saveBooks();
+        }
+    }
+
     function saveBooks() {
         const books = [];
-        const bookItems = toReadList.querySelectorAll("li");
+        const bookItems = toReadList.querySelectorAll("li .book-title");
         bookItems.forEach((item) => {
             books.push(item.textContent);
         });
@@ -57,15 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (storedBooks) {
             const books = JSON.parse(storedBooks);
             books.forEach((bookName) => {
-                const listItem = document.createElement("li");
-                listItem.innerHTML = `
-                    ${bookName}
-                    <button class="delete-button">Delete</button>
-                    <button class="update-button">Update</button>
-                `;
+                const listItem = createBookListItem(bookName);
                 toReadList.appendChild(listItem);
             });
         }
     }
 });
-

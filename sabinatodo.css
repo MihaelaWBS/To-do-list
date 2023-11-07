@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
     background-color: #caabab;
 }
 
@@ -41,6 +42,14 @@ button {
     padding: 0;
     margin: 20px auto;
     max-width: 70%;
+    color: black;
+    font-weight: bold;
+}
+
+.book-title {
+    color: black;
+    font-weight: bold;
+    flex-grow: 1;
 }
 
 li {
@@ -48,31 +57,33 @@ li {
     padding: 15px;
     margin: 20px;
     display: flex;
-    align-items: center; /* Center vertically within the list item */
     justify-content: space-between;
-}
-
-.book-title {
-    color: black; /* Set the text color to black */
-}
-
-li .book-title {
-    color: black; /* Set the text color to black */
-    font-weight: bold; /* Make the text bold */
-}
-
-li span {
-    display: flex;
     align-items: center;
+    color: black;
 }
 
-/* Style the buttons */
-.delete-button,
-.update-button {
-    background-color: #33cc33;
+.button-container {
+    display: flex;
+}
+
+.delete-button {
+    background-color: #2b2222;
     color: #fff;
     border: none;
-    padding: 5px 10px;
+    padding: 10px 20px;
     cursor: pointer;
-    margin-left: 10px; /* Add margin to align the buttons to the right */
+    margin-right: 10px; 
+}
+
+.update-button {
+    background-color: #2b2222;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.deleted .book-title {
+    text-decoration: line-through;
+    opacity: 0.5;
 }
