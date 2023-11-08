@@ -1,0 +1,49 @@
+.completed-task {
+    text-decoration: line-through;
+}
+
+/* Custom styles for delete button */
+.delete-button {
+    background-color:#0923a5; /* Set your custom color here */
+    color: #fff; /* Text color for the button */
+    border: 1px solid #0923a5;
+    transition: 0.3s ease-in-out;
+}
+
+.delete-button:hover {
+    color:  #0923a5;
+    background-color: #fff; /* Set your custom color for hover */
+    border: 1px solid  #0923a5; /* Set your custom border color for hover */
+    transform: scale(1.1);
+}
+
+/* Custom styles for finished button */
+.finished-button {
+    background-color: #a5f7c0; /* Set your custom color here */
+    color: #0923a5; /* Text color for the button */
+    border: 1px solid #a5f7c0;
+    transition: 0.3s ease-in-out;
+}
+
+.finished-button:hover {
+    background-color: #51A5BF; /* Set your custom color for hover */
+    border: 1px solid #0923a5; /* Set your custom border color for hover */
+    color: white;
+    transform: scale(1.1);
+}
+
+.save-btn {
+    background: rgb(9,35,165);
+    background: linear-gradient(90deg, rgba(9,35,165,1) 0%, rgba(165,247,192,1) 100%);  /* Set your custom color here */
+    color: #fff; /* Text color for the button */
+    border: 1px solid #0923a5;
+    border-style: none;
+    transition: 0.3s ease-in-out;
+}
+
+.save-btn:hover {
+    background: #51A5BF;  /* Set your custom color here */
+    color: #fff; /* Text color for the button */
+    border: 1px solid #0923a5;
+    transform: scale(1.1);
+}
