@@ -2,13 +2,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("toreadform");
     const toReadList = document.getElementById("toreadlist");
 
-    // Load books from localStorage when the page loads
+    // Loads what i´ve saved in localStorage when the page loads
     loadBooks();
 
     form.addEventListener("submit", function (e) {
         e.preventDefault();
         const bookInput = document.getElementById("book");
-        const bookName = bookInput.value.trim();
+        const bookName = bookInput.value.trim(); //removing extra space from begining or end
 
         if (bookName === "") {
             return;
