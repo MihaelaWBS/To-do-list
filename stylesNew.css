@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+
+}
+
+.completed-task {
+    text-decoration: line-through;
+}
+
+/* Custom styles for delete button */
+.delete-button {
+    background-color:#0923a5; /* Set your custom color here */
+    color: #fff; /* Text color for the button */
+    border: 1px solid #0923a5;
+    transition: box-shadow 0.4s ease-in-out; 
+    
+}
+
+.delete-button:hover {
+    color:  #0923a5;
+    background-color: #fff; /* Set your custom color for hover */
+    border: 1px solid  #0923a5; /* Set your custom border color for hover */
+    box-shadow: 0 4px 6px 0  #a5f7c0; /* Adjust values as needed */
+   
+}
+
+/* Custom styles for finished button */
+.finished-button {
+    background-color: #a5f7c0 ; /* Set your custom color here */
+    color: #0923a5; /* Text color for the button */
+    border: 1px solid #a5f7c0;
+    transition: box-shadow 0.4s ease-in-out; 
+    
+}
+
+.finished-button:hover {
+    background-color: #51A5BF; /* Set your custom color for hover */
+    border: 1px solid #0923a5; /* Set your custom border color for hover */
+    color: white;
+    box-shadow: 0 4px 6px 0 #0923a5; /* Adjust values as needed */
+   
+}
+
+.save-btn {
+    background: rgb(9,35,165);
+    background: linear-gradient(90deg, rgba(9,35,165,1) 0%, rgba(165,247,192,1) 100%);  /* Set your custom color here */
+    color: #fff; /* Text color for the button */
+    border: 1px solid #0923a5;
+    border-style: none;
+    transition: box-shadow 0.4s ease-in-out; 
+  
+}
+
+.save-btn:hover {
+    background: #51A5BF;  /* Set your custom color here */
+    color: #fff; /* Text color for the button */
+    border: 1px solid #0923a5;
+    box-shadow: 0 4px 6px 0#0923a5; /* Adjust values as needed */
+  
+}
+
+/* Custom styles for finished button 
+
+.get-tasks {
+    background: rgb(9,35,165);
+    background: linear-gradient(90deg, rgba(9,35,165,1) 0%, rgba(165,247,192,1) 100%);  
+    color: #fff; 
+    border: 1px solid #0923a5;
+    border-style: none;
+    transition: box-shadow 0.4s ease-in-out; 
+}
+
+.get-tasks:hover{
+    background: #51A5BF;  
+    color: #fff; 
+    border: 1px solid #0923a5;
+    box-shadow: 0 4px 6px 0 #0923a5; 
+
+
+}  */

@@ -1,0 +1,41 @@
+
+/* This adds a ghost element – which fills a space with 60px height, so it pushes the element back down.*/
+body::before {
+    display: block;
+    content: "";
+    height: 60px;
+}
+
+
+html, body {
+    height: 100%; /* Ensures full height */
+    margin: 0; /* Removes default margin */
+}
+
+body {
+    display: flex; /* Turns body into a flex container */
+    flex-direction: column; /* Aligns children (header, content, footer) vertically */
+}
+
+footer {
+    margin-top: auto; /* Pushes the footer to the bottom */
+    flex-shrink: 0; /* Prevents the footer from shrinking */
+}
+
+#navmenu li a{
+    transition: 0.3s ease-in-out;
+}
+
+#navmenu li a:hover {
+    color: #FFC353;
+    transform: scale(1.1);
+}
+
+.read-more{
+    transition: 0.3s ease-in-out;
+}
+
+.read-more:hover{
+    background-color: #FFC353;
+    transform: scale(1.1);
+}
