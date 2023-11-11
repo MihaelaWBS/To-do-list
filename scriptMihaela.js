@@ -84,13 +84,30 @@ function updateTable() {
 // ... (rest of the code)
 
 
-// Function to delete a task
+/*
+// Function to delete a task only from the list, not from LS also
 function deleteTask(index) {
     if (index >= 0 && index < tasksList.length) {
         tasksList.splice(index, 1);
         updateTable();
     }
+} */
+
+
+// Function to delete a task
+function deleteTask(index) {
+    if (index >= 0 && index < tasksList.length) {
+        // Remove the task from the array
+        tasksList.splice(index, 1);
+
+        // Update the table display
+        updateTable();
+
+        // Save the updated tasks list to local storage
+        saveTasksToLocalStorage();
+    }
 }
+
 
 // Function to mark/unmark a task as finished
 function toggleFinished(index) {
@@ -117,6 +134,7 @@ saveButton.addEventListener("click", (e) => {
 // Event listener for the "Get tasks" button
 getTasksButton.addEventListener("click", (e) => {
     e.preventDefault();
+    loadTasksFromLocalStorage(); // Load tasks from local storage
     updateTable();
 });
 
