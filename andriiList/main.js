@@ -1,11 +1,13 @@
 //Class Event
 class Event{
-  constructor(title, priority, date, description,checkBox){
+  constructor(title, priority, date, description,checkBox,addingTime){
     this.title = title;
     this.priority = priority;
     this.date = date;
     this.description = description;
     this.checkBox = checkBox;
+    this.addingTime = addingTime;
+
   }
 }
 // Class EventList
@@ -42,6 +44,7 @@ class CardEventList{
   }
 }
 
+//MAIN LIST OBJECTS
 const eventList = new EventList([]);
 const cardEventList = new CardEventList([]);
 
@@ -146,7 +149,7 @@ const render = () => {
 
 }
 
-
+//Create all elements of list and put into array
 const createEventElement = (element)  => {
 
   const li = document.createElement('li');
@@ -210,6 +213,7 @@ const createEventElement = (element)  => {
 
   })
 
+  //chexk Box listener
   checkBox.addEventListener('click', () => {
     if(element.checkBox   === 'checkBoxActive'){
       element.checkBox = 'checkBoxUnactive';
@@ -315,7 +319,6 @@ checkExpiredDate = () => {
       }
       return parseInt(string);
     })
-    console.log(dateArray);
 //compare date with today to understan if this date expired
     if(todayDate[0] === dateArray[0] && todayDate[1] === dateArray[1] && todayDate[2] === dateArray[2]){
       cardEventList.cardEventsList.forEach(cardEvent => {
@@ -368,6 +371,112 @@ checkExpiredDate = () => {
 });
 }
 
+const sortList = () =>{
+  const selectorSort = document.getElementById('sort-list');
+
+  selectorSort.addEventListener('click', () => {
+
+    switch(selectorSort.value){
+      case 'sort-priority':
+        eventList.eventsList.sort((elementA, elementB) => sortByPriority (elementA, elementB));
+        break;
+      case 'sort-date':  
+        eventList.eventsList.sort((elementA, elementB) => sortByDate (elementA, elementB));
+        break;
+      case 'sort-time':
+        eventList.eventsList.sort((elementA, elementB) => sortByAddingDate (elementA, elementB));
+        break;
+    }
+    render();
+    saveToLocalStorage();
+
+  })
+}
+
+  const sortByPriority = (elementA, elementB) => {
+      if(elementA.priority === 'High' && elementB.priority !== 'High'){
+        return -1;
+      } else if (elementB.priority === 'High' && elementA.priority !== 'High'){
+        return 1;
+      } else if (elementA.priority === 'Medium' && elementB.priority !== 'Medium'){
+        return -1;
+      } else if (elementB.priority === 'Medium' && elementA.priority !== 'Medium'){
+        return 1;
+      } else if (elementA.priority === 'Low' && elementB.priority !== 'Low'){
+        return -1;
+      } else if (elementB.priority === 'Low' && elementA.priority !== 'Low'){
+        return 1;
+      } else if (elementA.priority === elementB.priority){
+        console.log('1');
+        sortByDate(elementA, elementB);
+      }
+  }
+
+  const sortByDate = (elementA, elementB) => {
+  const arrayDate = [elementA.date,elementB.date]
+
+    let dateArray = elementA.date.split('-');
+    dateArray = parserIntDate(dateArray);
+    console.log(dateArray);
+    let todayDate = elementB.date.split('-');
+    todayDate = parserIntDate(todayDate);
+    console.log(todayDate);
+
+    if(todayDate[0] === dateArray[0] && todayDate[1] === dateArray[1] && todayDate[2] === dateArray[2]){
+      sortByAddingDate(elementA, elementB);
+
+    } else if(todayDate[0] > dateArray[0]){
+      return -1;
+    } else if (todayDate[0] < dateArray[0]) {
+      return 1;
+      
+    } else if (todayDate[0] === dateArray[0]){
+      if(todayDate[1] > dateArray[1]){
+        return -1;
+        
+      } else if (todayDate[1] < dateArray[1]){
+        return 1;
+        
+      } else if (todayDate[1] === dateArray[1]){
+        if(todayDate[2] > dateArray[2]){
+          return -1;
+          
+        } else if (todayDate[2] < dateArray[2]){
+          return 1;
+         
+            }
+        }  
+      }      
+    
+
+
+
+
+
+    console.log(eventList.eventsList);
+
+    
+  }
+
+  const parserIntDate = (dateArray) => {
+      dateArray = dateArray.map(string => {
+      if(string[0] === '0'){
+        string = string[1];
+      }
+      return parseInt(string);
+    })
+    return dateArray;
+  }
+
+  const sortByAddingDate = (elementA, elementB) => {
+    const elementADate = new Date(elementA.addingTime);
+    const elementBDate = new Date(elementB.addingTime);
+
+    console.log(elementADate);
+    
+    return elementADate < elementBDate?1:-1;
+
+  }
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
@@ -376,6 +485,7 @@ checkExpiredDate = () => {
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
   var forms = document.querySelectorAll('.needs-validation')
   loadFromLocalStorage();
+  sortList();
   // Loop over them and prevent submission
   Array.prototype.slice.call(forms)
     .forEach(function (form) {
@@ -404,12 +514,12 @@ const addEvent = (event,eventList, cardEventList) =>{
   const date = event.target.date.value;
   const describtion = event.target.description.value;
   const checkBoxId = 'checkBoxUnactive';
+  const addingTime = Date.now();
 
 
-  const newEvent = new Event(title, priority, date, describtion, checkBoxId);
+  const newEvent = new Event(title, priority, date, describtion, checkBoxId, addingTime);
 
   eventList.addEvent(newEvent);
   saveToLocalStorage();
 
 }
-
