@@ -31,17 +31,20 @@ footer {
 }
 
 #navmenu li a:hover {
-    color: #FFC353;
-    transform: scale(1.1);
+    color: #FEBE10;
+    transform: scale(1.2);
 }
 
 .read-more{
-    transition: 0.3s ease-in-out;
+    background-color: #FEBE10;
+    color: black;
+    border: 1px solid #FEBE10;
+    transition: box-shadow 0.4s ease-in-out; 
 }
 
 .read-more:hover{
-    background-color: #FFC353;
-    transform: scale(1.1);
+    background-color: #FEBE10;
+    box-shadow: 0 4px 6px 0 black; 
 }
 
 /* main page styling end*/
@@ -87,23 +90,45 @@ footer {
    
 }
 
+.save {
+    background-color:#FEBE10; /* Set your custom color here */
+    color: black; /* Text color for the button */
+    border: 1px solid #F6C100;
+    transition: box-shadow 0.4s ease-in-out; 
+    
+}
+
+.save:hover {
+    background-color:#FFC72C; /* Set your custom color for hover */
+    border: 1px solid #FFC72C; /* Set your custom border color for hover */
+    color: black;
+    box-shadow: 0 4px 6px 0 black; /* Adjust values as needed */
+   
+}
+
+
+/*
 .save-btn {
     background: rgb(9,35,165);
-    background: linear-gradient(90deg, rgba(9,35,165,1) 0%, rgba(165,247,192,1) 100%);  /* Set your custom color here */
-    color: #fff; /* Text color for the button */
+    background: linear-gradient(90deg, rgba(9,35,165,1) 0%, rgba(165,247,192,1) 100%);  
+    color: #fff; 
     border: 1px solid #0923a5;
     border-style: none;
     box-shadow: 0.4s ease-in-out; 
+    transition: none !important;
   
 }
 
 .save-btn:hover {
-    background: #51A5BF;  /* Set your custom color here */
-    color: #fff; /* Text color for the button */
-    border: 1px solid #0923a5;
-    box-shadow: 0 4px 6px 0#0923a5; /* Adjust values as needed */
+    background: #51A5BF;  
+    color: #fff; 
+    border: 1px solid #0923a5; 
+    box-shadow: 0 4px 6px 0#0923a5; 
+    transform: none !important; 
   
-}
+} */
+
+
 
 /* Custom styles for finished button 
 
@@ -124,6 +149,22 @@ footer {
 
 
 }  */
+
+.get-tasks {
+    background-color:white; /* Set your custom color here */
+    color: black; /* Text color for the button */
+    border: 1px solid #F6C100;
+    transition: box-shadow 0.4s ease-in-out; 
+    
+}
+
+.get-tasks:hover {
+    background-color: #FDE8A4; /* Set your custom color for hover */
+    border: 1px solid #FFC72C; /* Set your custom border color for hover */
+    color: black;
+    box-shadow: 0 4px 6px 0  #F6C100; /* Adjust values as needed */
+   
+}
 
 
 @media (max-width: 768px) {
