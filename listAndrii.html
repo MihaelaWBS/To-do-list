@@ -45,7 +45,7 @@
 							<a href="#" class="nav-link">Valentijn's List</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link">Andrii's List</a>
+							<a href="andriiList.js" class="nav-link">Andrii's List</a>
 						</li>
 					</ul>
 				</div>
@@ -55,12 +55,65 @@
 
 		<!--space to add the to do list - You can put the content inside the section and div if it helps with responsiveness, if not, delete them-->
 	
-        <section class="vh-100 mt-5" style="background-color: #eee;">
-            <div class="container py-5 h-100" >
+							<div class="container w-50 mt-5" >
+								<div class="row">
+									<h1 class="col-12 text-center">TO DO LIST</h1>
+								</div>
+								<form class="row g-3 needs-validation" novalidate>
+									<div class="col-md-4">
+										<label for="validationCustom04" class="form-label">Name of Event</label>
+										<input type="text" name="title" class="form-control bg-transparent" id="validationCustom01" placeholder="Name of Event" required>
+										<div class="invalid-feedback">
+											Please enter the name.
+										</div>
+									</div>
+									<div class="col-md-4">
+										<label for="validationCustom04" class="form-label">Priority</label>
+										<select class="form-select bg-transparent" name="priority" id="validationCustom04" required>
+											<option selected disabled value="">Choose Priority</option>
+											<option>High</option>
+											<option>Medium</option>
+											<option>Low</option>
+										</select>
+										<div class="invalid-feedback">
+											Please select a priority of the task.
+										</div>
+									</div>
+									<div class="col-md-4">
+										<label for="validationCustom05" class="form-label">Deadline</label>
+										<input type="date" name="date" class="form-control bg-transparent" id="validationCustom05" required>
+										<div class="invalid-feedback">
+											Please provide a deadline.
+										</div>
+									</div>
+									<div class="col-md-6">
+										<label for="validationCustom05" class="form-label">Describe Your Task</label>
+										<textarea class="form-control bg-transparent" name="description" id="exampleFormControlTextarea1" rows="3" required></textarea>
+										<div class="invalid-feedback">
+											Please add a description.
+										</div>
+									</div>
+									<div class="col-12">
+										<button class="btn btn-primary" type="submit">Add</button>
+									</div>
+								</form>
+								<div class="row text-lg-end mt-2 w-50">
+									<select class="form-select bg-transparent" name="sorting" id="sort-list">
+										<option selected disabled value="">Sort by</option>
+										<option value="sort-priority">Priority</option>
+										<option value="sort-date">Date</option>
+										<option value="sort-time">Time of adding</option>
+									</select>
+								</div>
+								<div class="row">
+									<div class="col-10">
+										<ol class="list-group" id="list-elements">
+							
+										</ol>
+									</div>
+								</div>
+							</div>
                
-
-            </div>
-        </section>
 
         <!--End of space for to do list-->
 
@@ -121,6 +174,6 @@
 			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 			crossorigin="anonymous"
 		></script>
-        <script src=""></script>  -   <!--add the link to your jS file here--> 
+        <script src="andriiList.js"></script>  -   <!--add the link to your jS file here--> 
 	</body>
 </html>
