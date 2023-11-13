@@ -1,0 +1,132 @@
+li::marker {
+    display: none !important;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+#log {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.btn.disabled, .btn:disabled {
+
+    background-color: grey;
+    border-color: grey;
+}
+
+input:focus::placeholder {
+    display: none;
+  }
+
+.draggable {
+    cursor: grab;
+    background-color: lightgrey;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    width: 100%;
+    padding: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 1 !important;
+
+}
+
+.dragging {
+    opacity: 0.5;
+}
+
+/* */
+
+.to-do-list-il.over .draggable {
+    background-color: #888888;
+  }
+
+.to-do-list-il {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+ul, ol {
+    padding-left: 0px !important;
+}
+
+p {
+    margin-bottom: 0 !important;
+}
+
+.to-do-list-il {
+    opacity: 1;
+}
+
+.grabbing * {
+    cursor: grabbing;
+}
+
+.to-do-list-il p.checked {
+    text-decoration: line-through;
+  }
+
+#done-items p.checked {
+    text-decoration: line-through;
+  }
+
+.deleteButton {
+    cursor: pointer;
+}
+
+.editButton {
+    cursor: pointer;
+}
+
+.form-check-input {
+    cursor: pointer;
+}
+
+#done-container {
+    display: none;
+}
+
+
+#done-items-container {
+    display: none;
+}
+
+#done-items-ul .spanWithIndex {
+  display: none;
+  }
+
+.done-items {
+
+    opacity: 0.5;
+    margin-left: 8.625px;
+}
+
+.to-do-list-il .spanWithIndex {
+
+    visibility: hidden;
+}
+
+#done-items-ul .editButton {
+ display: none;
+  }
+
+.log-event-container {
+    height: 1rem;
+}
