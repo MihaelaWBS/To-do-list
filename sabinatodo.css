@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    background-color: #caabab;
+}
+
+h1 {
+    font-family: 'Luxurious Roman', serif;
+    text-align: center;
+    color: black;
+    margin: 2rem auto;
+}
+
+#toreadform {
+    text-align: center;
+    margin: 1rem auto;
+    width: 70%;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 1rem;
+    font-size: 1rem;
+    margin: 1rem 0;
+    border: 0.6rem solid #a39292;
+    border-style: inset;
+    outline: none;
+}
+
+button {
+    background-color: #2b2222;
+    color: #fff;
+    padding: 0.8rem 0.8rem;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+}
+
+#toreadlist {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem auto;
+    max-width: 80%;
+    color: black;
+    font-weight: bold;
+}
+
+.book-title {
+    background-color: #fff;
+    color: black;
+    font-weight: bold;
+    flex-grow: 1;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li {
+    /*background-color: #fff;*/
+    padding: 0.5rem;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+
+.button-container {
+    display: flex;
+}
+
+.delete-button {
+    background-color: #2b2222 !important;
+    color: #fff !important;
+    border: none;
+    padding: 0.8rem 0.8rem;
+    cursor: pointer ;
+    margin: 1rem; 
+    box-shadow: none;
+}
+
+.delete-button:hover {
+    color: inherit;
+    background-color: inherit;
+    border: inherit;
+    box-shadow: none;
+}
+
+.update-button {
+    background-color: #2b2222;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 0.8rem;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.deleted .book-title {
+    text-decoration: line-through;
+   
+}
